@@ -11,7 +11,7 @@ Profesores: Daniel Granados · Rubén Mora · Juan Gamboa
 | Recurso | URL |
 |---|---|
 | Sitio publicado | https://Edicson-PQ.github.io/edicson-fullstack |
-| Repositorio |https;//github.com/Edicson-PQ |
+| Repositorio |https://github.com/Edicson-PQ |
 | Prototipo Figma | https://www.figma.com/make/zpj5tY3PaosXOJWdtt10Kn/Professional-Portfolio-Website?t=IZQYjF3ZW2g9N2JC-1 |
 
 ---

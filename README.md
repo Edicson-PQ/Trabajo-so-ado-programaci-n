@@ -182,7 +182,7 @@ El análisis de la oferta de Accelint/Hypergiant revela demanda específica para
 
 El prototipo fue diseñado en Figma antes de comenzar el desarrollo, con enfoque Mobile First.
 
-**Enlace al prototipo de Figma:** *(agregar enlace aquí al completar el diseño)*
+**Enlace al prototipo de Figma:** https://www.figma.com/make/zpj5tY3PaosXOJWdtt10Kn/Professional-Portfolio-Website?t=IZQYjF3ZW2g9N2JC-1
 
 **Decisiones de diseño fundamentadas en la investigación:**
 
@@ -200,7 +200,7 @@ El prototipo fue diseñado en Figma antes de comenzar el desarrollo, con enfoque
 - **CSS3:** Custom Properties (`--var`), Flexbox, CSS Grid, `@keyframes`, `@media` queries (breakpoints en 768px y 1100px), `transition`, `animation`. Sin frameworks.
 - **JavaScript (uso limitado y justificado):** Solo para funcionalidades imposibles en CSS: modo oscuro con `localStorage`, canvas de partículas con `requestAnimationFrame`, efecto typewriter, contador animado de estadísticas y sistema de scroll reveal con `IntersectionObserver`.
 
-### Animaciones implementadas
+### Animaciones implementadas (Este es la ocacion donde se utilizó JavaScript de manera controlada solo para animaciones en especifico)
 
 | Animación | Tecnología | Descripción |
 |---|---|---|
@@ -219,22 +219,13 @@ El prototipo fue diseñado en Figma antes de comenzar el desarrollo, con enfoque
 
 - `@media (min-width: 768px)` — layout de dos columnas para tablet y desktop
 - `@media (min-width: 1100px)` — grids de tres columnas para pantallas grandes
-- Menú hamburguesa implementado con checkbox CSS (sin JavaScript)
 - Todos los tamaños de fuente usan `clamp()` para escalar entre dispositivos
 
 ### Modo oscuro
 
 Implementado con `data-theme="dark"` en el elemento `<html>` y CSS custom properties que cambian la paleta completa. La preferencia del usuario se persiste con `localStorage` y se respeta la configuración del sistema operativo con `prefers-color-scheme`.
 
----
 
-## Parte 4 — Presentación en clase
-
-La presentación de 1 minuto cubrirá:
-
-1. Demo en vivo del sitio publicado en GitHub Pages
-2. Explicación del perfil investigado: Full Stack Engineer con especialización en Cloud-Native e IA
-3. Demostración de una de las demos interactivas de proyecto (Coworking, PM System o RestUNA)
 
 ---
 

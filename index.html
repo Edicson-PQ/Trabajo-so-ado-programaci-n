@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Professional portfolio of Edicson Picado, Full Stack Developer specialized in cloud-native and AI-integrated systems." />
+  <title>Edicson Picado | Full Stack Developer</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <div class="spotlight" id="spotlight"></div>
+  <canvas id="particles-canvas" aria-hidden="true"></canvas>
+  <header class="site-nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#home" aria-label="Go to home section">
+        <span class="brand-mark">EP</span>
+        <span class="brand-name">Edicson Picado</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Desktop navigation">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <a class="btn btn-primary nav-cta" href="#contact">Hire Me</a>
+
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light mode" title="Toggle theme">🌙</button>
+
+      <input id="nav-toggle" type="checkbox" aria-label="Open mobile menu" />
+      <label class="hamburger" for="nav-toggle" aria-hidden="true">
+        <span></span>
+      </label>
+
+      <nav class="mobile-menu" aria-label="Mobile navigation">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+        <a class="btn btn-primary" href="#contact">Hire Me</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="badge reveal">
+            <span class="badge-dot"></span>
+            <span>Available for projects</span>
+          </div>
+
+          <h1 class="reveal delay-1">
+            Building
+            <span class="accent">Digital Products</span>
+            End to End.
+          </h1>
+
+          <p class="reveal delay-2">
+            Full Stack Engineer specializing in Cloud-Native architectures and AI-integrated systems. From interface to
+            infrastructure.
+          </p>
+
+          <div class="hero-actions reveal delay-3">
+            <a class="btn btn-primary btn-inline" href="#projects">
+              View My Work
+              <span aria-hidden="true">&#8594;</span>
+            </a>
+            <a class="btn btn-outline btn-inline" href="#" id="cv-download-btn" aria-label="Download CV as PDF">
+              Download CV
+              <span aria-hidden="true">&#8681;</span>
+            </a>
+          </div>
+
+          <div class="tech-stack reveal delay-4">
+            <span>JavaScript</span><span aria-hidden="true">&middot;</span><span>Node.js</span><span
+              aria-hidden="true">&middot;</span><span>TypeScript</span><span
+              aria-hidden="true">&middot;</span><span>PostgreSQL</span><span
+              aria-hidden="true">&middot;</span><span>Docker</span><span
+              aria-hidden="true">&middot;</span><span>AWS</span>
+          </div>
+        </div>
+
+        <div class="hero-card-wrap reveal delay-2">
+          <div class="hero-frame">
+            <div class="hero-dash"></div>
+            <article class="hero-card" aria-label="Profile summary card">
+              <img class="profile-photo" src="assets/edicson-photo.jpg" alt="Foto de Edicson Picado" />
+              <div class="line"></div>
+              <div class="role">Full Stack Developer</div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section alt-bg">
+      <div class="container grid-2">
+        <div class="copy">
+          <div class="label">About Me</div>
+          <h2 class="title">A developer who thinks in systems</h2>
+          <p>
+            I am a Full Stack Engineer in training with a clear professional goal: to build scalable, secure, and
+            intelligent digital systems. My academic background in Information Systems Engineering, combined with
+            hands-on project experience, positions me at the intersection of software engineering and systems thinking.
+          </p>
+          <p>
+            I chose Full Stack because I want to understand the complete product from the user interface to the
+            infrastructure layer. That integral vision is what drives me toward roles in technical leadership and
+            technology entrepreneurship.
+          </p>
+
+          <div class="stats-row">
+            <div class="stat">
+              <span class="stat-num" data-count="3" data-suffix="+">0+</span>
+              <div class="stat-label">Projects</div>
+            </div>
+            <div class="stat">
+              <span class="stat-num" data-count="2" data-suffix="+">0+</span>
+              <div class="stat-label">Years Learning</div>
+            </div>
+            <div class="stat">
+              <span class="stat-num" data-count="12" data-suffix="+">0+</span>
+              <div class="stat-label">Technologies</div>
+            </div>
+            <div class="stat">
+              <span class="stat-num" data-count="100" data-suffix="%">0%</span>
+              <div class="stat-label">Dedication</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-list">
+          <article class="info-card">
+            <div class="info-row">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 21s7-5.2 7-11a7 7 0 1 0-14 0c0 5.8 7 11 7 11Z"></path>
+                <circle cx="12" cy="10" r="2.5"></circle>
+              </svg>
+              <div>
+                <div class="info-title">Location</div>
+                <div class="info-text">Costa Rica</div>
+              </div>
+            </div>
+          </article>
+          <article class="info-card">
+            <div class="info-row">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 10 12 5 2 10l10 5 10-5Z"></path>
+                <path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"></path>
+              </svg>
+              <div>
+                <div class="info-title">University</div>
+                <div class="info-text">UNA Sede Brunca</div>
+              </div>
+            </div>
+          </article>
+          <article class="info-card">
+            <div class="info-row">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                <path d="M6.5 2H20v18H6.5A2.5 2.5 0 0 1 4 17.5v-13A2.5 2.5 0 0 1 6.5 2Z"></path>
+              </svg>
+              <div>
+                <div class="info-title">Degree</div>
+                <div class="info-text">Information Systems Engineering</div>
+              </div>
+            </div>
+          </article>
+          <article class="info-card">
+            <div class="info-row">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="7" width="20" height="14" rx="2"></rect>
+                <path d="M16 21V5a2 2 0 0 0-2-2H10a2 2 0 0 0-2 2v16"></path>
+              </svg>
+              <div>
+                <div class="info-title">Status</div>
+                <div class="info-text">Open to freelance and remote work</div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section metro-section">
+      <div class="container">
+        <div class="metro-header">
+          <div class="label">Technical Skills</div>
+          <h2 class="title">Tech Stack Map</h2>
+          <p class="subtitle">My technical profile as a connected system &mdash; three lines, twelve stations.</p>
+        </div>
+
+        <div class="metro-map" role="region" aria-label="Technical skills metro map">
+
+          <!-- LINE 1: FRONTEND -->
+          <div class="metro-line" data-color="blue">
+            <div class="line-header">
+              <span class="line-badge line-blue">Frontend</span>
+            </div>
+            <div class="line-body">
+              <div class="line-rail" aria-hidden="true"><div class="line-rail-progress"></div></div>
+              <div class="station" tabindex="0" role="button" aria-label="JavaScript - Core skill">
+                <div class="station-dot"></div>
+                <div class="station-card">
+                  <div class="station-name">JavaScript</div>
+                  <span class="station-tag core">Core</span>
+                  <div class="station-bars"><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span></div>
+                  <div class="station-tooltip">Uso diario &middot; ES6+, DOM, Fetch</div>
+                </div>
+              </div>
+              <div class="station" tabindex="0" role="button" aria-label="TypeScript - Strong skill">
+                <div class="station-dot"></div>
+                <div class="station-card">
+                  <div class="station-name">TypeScript</div>
+                  <span class="station-tag strong">Strong</span>
+                  <div class="station-bars"><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span></div>
+                  <div class="station-tooltip">Tipado estático &middot; proyectos reales</div>
+                </div>
+              </div>
+              <div class="station" tabindex="0" role="button" aria-label="HTML5 - Core skill">
+                <div class="station-dot"></div>
+                <div class="station-card">
+                  <div class="station-name">HTML5</div>
+                  <span class="station-tag core">Core</span>
+                  <div class="station-bars"><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span></div>
+                  <div class="station-tooltip">Semántica &middot; accesibilidad &middot; SEO</div>
+                </div>
+              </div>
+              <div class="station" tabindex="0" role="button" aria-label="CSS3 - Core skill">
+                <div class="station-dot"></div>
+                <div class="station-card">
+                  <div class="station-name">CSS3</div>
+                  <span class="station-tag core">Core</span>
+                  <div class="station-bars"><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span></div>
+                  <div class="station-tooltip">Layouts &middot; animaciones &middot; responsive</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- LINE 2: BACKEND -->
+          <div class="metro-line" data-color="purple">
+            <div class="line-header">
+              <span class="line-badge line-purple">Backend</span>
+            </div>
+            <div class="line-body">
+              <div class="line-rail" aria-hidden="true"><div class="line-rail-progress"></div></div>
+              <div class="station" tabindex="0" role="button" aria-label="Node.js - Core skill">
+                <div class="station-dot"></div>
+                <div class="station-card">
+                  <div class="station-name">Node.js</div>
+                  <span class="station-tag core">Core</span>
+                  <div class="station-bars"><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span></div>
+                  <div class="station-tooltip">APIs REST &middot; Express &middot; npm</div>
+                </div>
+              </div>
+              <div class="station" tabindex="0" role="button" aria-label="PostgreSQL - Strong skill">
+                <div class="station-dot"></div>
+                <div class="station-card">
+                  <div class="station-name">PostgreSQL</div>
+                  <span class="station-tag strong">Strong</span>
+                  <div class="station-bars"><span class="bar filled"></span><span class="bar filled"></span><span class="bar empty"></span></div>
+                  <div class="station-tooltip">Esquemas &middot; SQL complejo</div>
+                </div>
+              </div>
+              <div class="station" tabindex="0" role="button" aria-label="MongoDB - Strong skill">
+                <div class="station-dot"></div>
+                <div class="station-card">
+                  <div class="station-name">MongoDB</div>
+                  <span class="station-tag strong">Strong</span>
+                  <div class="station-bars"><span class="bar filled"></span><span class="bar filled"></span><span class="bar empty"></span></div>
+                  <div class="station-tooltip">Documentos &middot; aggregation</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- LINE 3: DEVOPS + AI -->
+          <div class="metro-line" data-color="cyan">
+            <div class="line-header">
+              <span class="line-badge line-cyan">DevOps &middot; AI</span>
+            </div>
+            <div class="line-body">
+              <div class="line-rail" aria-hidden="true"><div class="line-rail-progress"></div></div>
+              <div class="station" tabindex="0" role="button" aria-label="Docker - Strong skill">
+                <div class="station-dot"></div>
+                <div class="station-card">
+                  <div class="station-name">Docker</div>
+                  <span class="station-tag strong">Strong</span>
+                  <div class="station-bars"><span class="bar filled"></span><span class="bar filled"></span><span class="bar empty"></span></div>
+                  <div class="station-tooltip">Contenedores &middot; docker-compose</div>
+                </div>
+              </div>
+              <div class="station" tabindex="0" role="button" aria-label="Git - Core skill">
+                <div class="station-dot"></div>
+                <div class="station-card">
+                  <div class="station-name">Git</div>
+                  <span class="station-tag core">Core</span>
+                  <div class="station-bars"><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span></div>
+                  <div class="station-tooltip">Control de versiones &middot; GitHub Flow</div>
+                </div>
+              </div>
+              <div class="station" tabindex="0" role="button" aria-label="AWS - Learning skill">
+                <div class="station-dot"></div>
+                <div class="station-card">
+                  <div class="station-name">AWS</div>
+                  <span class="station-tag learning">Learning</span>
+                  <div class="station-bars"><span class="bar filled"></span><span class="bar empty"></span><span class="bar empty"></span></div>
+                  <div class="station-tooltip">EC2 &middot; S3 &middot; IAM b&aacute;sico</div>
+                </div>
+              </div>
+              <div class="station" tabindex="0" role="button" aria-label="Claude Code - Strong skill">
+                <div class="station-dot"></div>
+                <div class="station-card">
+                  <div class="station-name">Claude Code</div>
+                  <span class="station-tag strong">Strong</span>
+                  <div class="station-bars"><span class="bar filled"></span><span class="bar filled"></span><span class="bar empty"></span></div>
+                  <div class="station-tooltip">AI-assisted dev &middot; uso diario</div>
+                </div>
+              </div>
+              <div class="station" tabindex="0" role="button" aria-label="GitHub Copilot - Core skill">
+                <div class="station-dot"></div>
+                <div class="station-card">
+                  <div class="station-name">Copilot</div>
+                  <span class="station-tag core">Core</span>
+                  <div class="station-bars"><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span></div>
+                  <div class="station-tooltip">Pair programming con IA</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section alt-bg">
+      <div class="container">
+        <div style="display:grid;gap:.75rem;margin-bottom:3rem;">
+          <div class="label">Featured Projects</div>
+          <h2 class="title">Featured Projects</h2>
+          <p class="subtitle">Selected work demonstrating full-stack capability</p>
+        </div>
+
+        <div class="card-grid projects">
+          <article class="project-card">
+            <div class="project-cover" style="background:linear-gradient(135deg,#eff6ff 0%,#dbeafe 100%);"></div>
+            <div class="project-body">
+              <div class="tags"><span class="tag">Java</span><span class="tag">JavaFX</span><span class="tag">SQL</span></div>
+              <h3 class="project-title">Coworking Space Platform</h3>
+              <p class="project-text">Plataforma digital para la gestión y reserva de espacios en entornos de coworking. Desarrollada el año pasado con un enfoque clave en la experiencia y diseño UX/UI inteligente.</p>
+              <div class="project-links"><a class="link-demo" href="coworking-demo.html">Live Demo &#8594;</a><a class="link-code" href="#">View Code</a></div>
+            </div>
+          </article>
+          
+          <article class="project-card">
+            <div class="project-cover" style="background:linear-gradient(135deg,#f5f3ff 0%,#ede9fe 100%);"></div>
+            <div class="project-body">
+              <div class="tags"><span class="tag">Node.js</span><span class="tag">API REST</span><span class="tag">TypeScript</span></div>
+              <h3 class="project-title">Project Management System</h3>
+              <p class="project-text">Herramienta integral de gestión de proyectos orientada a equipos de alto rendimiento. Permite asignar tareas, administrar roles y visualizar todo el progreso de forma remota.</p>
+              <div class="project-links"><a class="link-demo" href="pm-demo.html">Live Demo &#8594;</a><a class="link-code" href="#">View Code</a></div>
+            </div>
+          </article>
+          
+          <article class="project-card">
+            <div class="project-cover" style="background:linear-gradient(135deg,#f0fdf4 0%,#dcfce7 100%);"></div>
+            <div class="project-body">
+              <div class="tags"><span class="tag">JavaFX</span><span class="tag">PostgreSQL</span><span class="tag">Arquitectura</span></div>
+              <h3 class="project-title">RestUNA (Restaurant App)</h3>
+              <p class="project-text">Aplicación robusta de administración para restaurantes. Integra punto de venta, ruteo de órdenes en tiempo real, y control preciso de inventario y planillas.</p>
+              <div class="project-links"><a class="link-demo" href="rest-demo.html">Live Demo &#8594;</a><a class="link-code" href="#">View Code</a></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section">
+      <div class="container">
+        <div style="display:grid;gap:.75rem;margin-bottom:3rem;">
+          <div class="label">Services</div>
+          <h2 class="title">Services I Offer</h2>
+          <p class="subtitle">Professional freelance services available for remote clients and local businesses</p>
+        </div>
+
+        <div class="card-grid services">
+          <article class="service-card" style="border-top-color:#2563eb;">
+            <div class="service-icon" style="background:#2563eb1f;color:#2563eb;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+              </svg>
+            </div>
+            <h3 class="service-title">Full Stack Web Development</h3>
+            <p class="service-text">Complete design-to-deployment of web applications using modern stacks. From landing
+              pages to complex multi-service systems.</p>
+            <div class="deliverables">
+              <div class="deliverable"><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2">
+                  <path d="m5 12 5 5L20 7"></path>
+                </svg><span>Responsive HTML5/CSS3 frontend</span></div>
+              <div class="deliverable"><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2">
+                  <path d="m5 12 5 5L20 7"></path>
+                </svg><span>Node.js or Python backend</span></div>
+              <div class="deliverable"><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2">
+                  <path d="m5 12 5 5L20 7"></path>
+                </svg><span>Database design and integration</span></div>
+            </div>
+            <a class="service-cta" href="#contact" style="color:#2563eb;">Start a project &#8594;</a>
+          </article>
+
+          <article class="service-card" style="border-top-color:#7c3aed;">
+            <div class="service-icon" style="background:#7c3aed1f;color:#7c3aed;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="7" height="7"></rect>
+                <rect x="14" y="3" width="7" height="7"></rect>
+                <rect x="14" y="14" width="7" height="7"></rect>
+                <rect x="3" y="14" width="7" height="7"></rect>
+                <path d="M10 6h4M17 10v4M14 17h-4M7 14v-4"></path>
+              </svg>
+            </div>
+            <h3 class="service-title">REST API Design and Integration</h3>
+            <p class="service-text">Design, documentation, and implementation of clean RESTful APIs. OpenAPI/Swagger
+              documented, JWT secured, version controlled.</p>
+            <div class="deliverables">
+              <div class="deliverable"><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2">
+                  <path d="m5 12 5 5L20 7"></path>
+                </svg><span>Documented API with OpenAPI spec</span></div>
+              <div class="deliverable"><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2">
+                  <path d="m5 12 5 5L20 7"></path>
+                </svg><span>Authentication and authorization</span></div>
+              <div class="deliverable"><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2">
+                  <path d="m5 12 5 5L20 7"></path>
+                </svg><span>Third-party service integrations</span></div>
+            </div>
+            <a class="service-cta" href="#contact" style="color:#7c3aed;">Start a project &#8594;</a>
+          </article>
+
+          <article class="service-card" style="border-top-color:#0891b2;">
+            <div class="service-icon" style="background:#0891b21f;color:#0891b2;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 15a4 4 0 0 0 4 4h10a4 4 0 0 0 .2-8 6 6 0 0 0-11.6 1A3.5 3.5 0 0 0 3 15Z"></path>
+              </svg>
+            </div>
+            <h3 class="service-title">Cloud Deployment and DevOps Setup</h3>
+            <p class="service-text">Containerization and cloud deployment of web applications. Docker, GitHub Actions
+              CI/CD, AWS or similar providers.</p>
+            <div class="deliverables">
+              <div class="deliverable"><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2">
+                  <path d="m5 12 5 5L20 7"></path>
+                </svg><span>Docker containerization</span></div>
+              <div class="deliverable"><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2">
+                  <path d="m5 12 5 5L20 7"></path>
+                </svg><span>CI/CD pipeline with GitHub Actions</span></div>
+              <div class="deliverable"><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2">
+                  <path d="m5 12 5 5L20 7"></path>
+                </svg><span>Cloud deployment and monitoring</span></div>
+            </div>
+            <a class="service-cta" href="#contact" style="color:#0891b2;">Start a project &#8594;</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section alt-bg">
+      <div class="container">
+        <div style="display:grid;gap:.75rem;margin-bottom:3rem;">
+          <div class="label">Contact</div>
+          <h2 class="title">Let's Work Together</h2>
+          <p class="subtitle">Available for freelance projects, remote collaborations, and technical consulting.</p>
+        </div>
+
+        <div class="contact-grid">
+          <article class="contact-panel">
+            <form class="form" action="mailto:contact@edicsonpicado.dev" method="post" enctype="text/plain">
+              <div class="field">
+                <label for="name">Full Name</label>
+                <input id="name" name="name" type="text" placeholder="Your name" required />
+              </div>
+              <div class="field">
+                <label for="email">Email Address</label>
+                <input id="email" name="email" type="email" placeholder="your.email@example.com" required />
+              </div>
+              <div class="field">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Tell me about your project..." required></textarea>
+              </div>
+              <button class="btn btn-primary" type="submit">Send Message</button>
+            </form>
+          </article>
+
+          <article class="contact-panel">
+            <h3 class="title" style="font-size:1.5rem;">Contact Information</h3>
+            <div class="contact-info">
+              <div class="contact-item">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                  <path d="m22 7-10 6L2 7"></path>
+                </svg>
+                <div>
+                  <div class="info-title">Email</div><a
+                    href="mailto:edicsonpicadoq@gmail.com">edicsonpicadoq@gmail.com</a>
+                </div>
+              </div>
+              <div class="contact-item">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M15 22v-4a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v4"></path>
+                  <circle cx="8" cy="7" r="4"></circle>
+                  <path d="M20 8v6M23 11h-6"></path>
+                </svg>
+                <div>
+                  <div class="info-title">GitHub</div><a href="https://github.com/Edicson-PQ" target="_blank"
+                    rel="noopener noreferrer">github.com/Edicson-PQ</a>
+                </div>
+              </div>
+              <div class="contact-item">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-5a2 2 0 0 0-4 0v5h-4v-7a6 6 0 0 1 6-6Z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+                <div>
+                  <div class="info-title">LinkedIn</div><a href="https://linkedin.com/in/ing-edicson-picado-quesada"
+                    target="_blank" rel="noopener noreferrer">linkedin.com/in/ing-edicson-picado-quesada</a>
+                </div>
+              </div>
+              <div class="contact-item">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 21s7-5.2 7-11a7 7 0 1 0-14 0c0 5.8 7 11 7 11Z"></path>
+                  <circle cx="12" cy="10" r="2.5"></circle>
+                </svg>
+                <div>
+                  <div class="info-title">Location</div><span>Perez Zeledon, Costa Rica</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="socials">
+              <a class="social" href="https://github.com/Edicson-PQ" target="_blank" rel="noopener noreferrer"
+                aria-label="GitHub">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" aria-hidden="true">
+                  <path
+                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                  </path>
+                </svg>
+              </a>
+              <a class="social" href="https://linkedin.com/in/ing-edicson-picado-quesada" target="_blank"
+                rel="noopener noreferrer" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" aria-hidden="true">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-5a2 2 0 0 0-4 0v5h-4v-7a6 6 0 0 1 6-6Z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+              <a class="social" href="mailto:edicsonpicadoq@gmail.com" aria-label="Email">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" aria-hidden="true">
+                  <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                  <path d="m22 7-10 6L2 7"></path>
+                </svg>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>Edicson Picado · Full Stack Developer · 2026</p>
+      <p>Built with HTML5, CSS3 &amp; Vanilla JavaScript.</p>
+    </div>
+  </footer>
+  <script src="animations.js" defer></script>
+
+  <!-- CV PRINT SECTION — only visible during print/PDF -->
+  <div id="cv-print" aria-hidden="true">
+    <header class="cv-header">
+      <div>
+        <h1 class="cv-name">Edicson Picado</h1>
+        <p class="cv-title">Full Stack Developer &mdash; Information Systems Engineering</p>
+      </div>
+      <div class="cv-contacts">
+        <span>edicsonpicadoq@gmail.com</span>
+        <span>github.com/Edicson-PQ</span>
+        <span>linkedin.com/in/ing-edicson-picado-quesada</span>
+        <span>P&eacute;rez Zeled&oacute;n, Costa Rica</span>
+      </div>
+    </header>
+
+    <div class="cv-body">
+      <section class="cv-sec">
+        <h2 class="cv-sec-title">Profile</h2>
+        <p>Full Stack Engineer in training with a clear professional goal: to build scalable, secure, and intelligent digital systems. My academic background in Information Systems Engineering, combined with hands-on project experience, positions me at the intersection of software engineering and systems thinking. Open to freelance, remote, and technical consulting opportunities globally.</p>
+      </section>
+
+      <section class="cv-sec">
+        <h2 class="cv-sec-title">Technical Skills</h2>
+        <div class="cv-skills">
+          <div class="cv-skill-col">
+            <div class="cv-skill-head">Frontend</div>
+            <ul>
+              <li>JavaScript (ES6+) &mdash; Core</li>
+              <li>TypeScript &mdash; Strong</li>
+              <li>HTML5 &mdash; Core</li>
+              <li>CSS3 &mdash; Core</li>
+            </ul>
+          </div>
+          <div class="cv-skill-col">
+            <div class="cv-skill-head">Backend</div>
+            <ul>
+              <li>Node.js &mdash; Core</li>
+              <li>PostgreSQL &mdash; Strong</li>
+              <li>MongoDB &mdash; Strong</li>
+            </ul>
+          </div>
+          <div class="cv-skill-col">
+            <div class="cv-skill-head">DevOps &amp; AI</div>
+            <ul>
+              <li>Docker &mdash; Strong</li>
+              <li>Git &mdash; Core</li>
+              <li>AWS &mdash; Learning</li>
+              <li>Claude Code &mdash; Strong</li>
+              <li>GitHub Copilot &mdash; Core</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="cv-sec">
+        <h2 class="cv-sec-title">Projects</h2>
+        <div class="cv-project">
+          <div class="cv-proj-row">
+            <strong>Coworking Space Platform</strong>
+            <span class="cv-stack">Java &middot; JavaFX &middot; SQL</span>
+          </div>
+          <p>Digital platform for managing and reserving spaces in coworking environments. Developed with a focus on user experience and intelligent UX/UI design. Features booking management and space availability tracking.</p>
+        </div>
+        <div class="cv-project">
+          <div class="cv-proj-row">
+            <strong>Project Management System</strong>
+            <span class="cv-stack">Java &middot; JavaFX &middot; SQL</span>
+          </div>
+          <p>Comprehensive project management tool oriented toward high-performance teams. Enables task assignment, role management, and remote progress visualization across the organization.</p>
+        </div>
+        <div class="cv-project">
+          <div class="cv-proj-row">
+            <strong>RestUNA &mdash; Restaurant Management App</strong>
+            <span class="cv-stack">JavaFX &middot; PostgreSQL</span>
+          </div>
+          <p>Robust restaurant administration application integrating point-of-sale, real-time order routing, and precise inventory and payroll control.</p>
+        </div>
+      </section>
+
+      <div class="cv-two-col">
+        <section class="cv-sec">
+          <h2 class="cv-sec-title">Education</h2>
+          <strong>Bachelor&rsquo;s in Information Systems Engineering</strong>
+          <p>UNA Sede Brunca &middot; In progress (2026)</p>
+        </section>
+        <section class="cv-sec">
+          <h2 class="cv-sec-title">Availability</h2>
+          <p>Open to freelance projects, remote collaborations, and technical consulting globally. Available to start immediately.</p>
+        </section>
+      </div>
+    </div>
+
+    <footer class="cv-footer">
+      <p>edicsonpicadoq@gmail.com &nbsp;&middot;&nbsp; github.com/Edicson-PQ &nbsp;&middot;&nbsp; linkedin.com/in/ing-edicson-picado-quesada</p>
+    </footer>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script>
+    document.getElementById('cv-download-btn').addEventListener('click', function (e) {
+      e.preventDefault();
+      const btn = this;
+      btn.textContent = 'Generating…';
+      btn.style.pointerEvents = 'none';
+
+      try {
+        const { jsPDF } = window.jspdf;
+        const doc = new jsPDF('p', 'mm', 'a4');
+        const W = 210;
+        const H = 297;
+        const M = 14; // margin
+        const CW = W - M * 2; // content width
+        let y = 0;
+
+        // ── HEADER — blue band ──────────────────────────────────
+        doc.setFillColor(37, 99, 235);
+        doc.rect(0, 0, W, 42, 'F');
+
+        doc.setTextColor(255, 255, 255);
+        doc.setFont('helvetica', 'bold');
+        doc.setFontSize(24);
+        doc.text('Edicson Picado', M, 17);
+
+        doc.setFont('helvetica', 'normal');
+        doc.setFontSize(8.5);
+        doc.text('FULL STACK DEVELOPER  ·  INFORMATION SYSTEMS ENGINEERING', M, 25);
+
+        doc.setFontSize(7.5);
+        const contacts = [
+          'edicsonpicadoq@gmail.com',
+          'github.com/Edicson-PQ',
+          'linkedin.com/in/ing-edicson-picado-quesada',
+          'Pérez Zeledón, Costa Rica'
+        ];
+        contacts.forEach(function (c, i) {
+          doc.text(c, W - M, 12 + i * 7, { align: 'right' });
+        });
+
+        y = 52;
+
+        // ── Helper: section heading ──────────────────────────────
+        function secTitle(label) {
+          doc.setFont('helvetica', 'bold');
+          doc.setFontSize(8);
+          doc.setTextColor(37, 99, 235);
+          doc.text(label.toUpperCase(), M, y);
+          doc.setDrawColor(37, 99, 235);
+          doc.setLineWidth(0.5);
+          doc.line(M, y + 1.5, W - M, y + 1.5);
+          doc.setTextColor(71, 85, 105);
+          doc.setFont('helvetica', 'normal');
+          y += 7;
+        }
+
+        // ── PROFILE ─────────────────────────────────────────────
+        secTitle('Profile');
+        doc.setFontSize(9);
+        const profileLines = doc.splitTextToSize(
+          'Full Stack Engineer in training with a clear professional goal: to build scalable, secure, and intelligent digital systems. ' +
+          'Academic background in Information Systems Engineering combined with real project experience. ' +
+          'Open to freelance, remote, and technical consulting opportunities globally.',
+          CW
+        );
+        doc.text(profileLines, M, y);
+        y += profileLines.length * 5 + 8;
+
+        // ── TECHNICAL SKILLS — 3 columns ─────────────────────────
+        secTitle('Technical Skills');
+        const colW = CW / 3;
+        const skillCols = [
+          { head: 'Frontend',   items: ['JavaScript (ES6+) — Core', 'TypeScript — Strong', 'HTML5 — Core', 'CSS3 — Core'] },
+          { head: 'Backend',    items: ['Node.js — Core', 'PostgreSQL — Strong', 'MongoDB — Strong'] },
+          { head: 'DevOps & AI',items: ['Docker — Strong', 'Git — Core', 'AWS — Learning', 'Claude Code — Strong', 'GitHub Copilot — Core'] }
+        ];
+        skillCols.forEach(function (col, i) {
+          var cx = M + i * colW;
+          doc.setFont('helvetica', 'bold');
+          doc.setFontSize(8.5);
+          doc.setTextColor(15, 23, 42);
+          doc.text(col.head.toUpperCase(), cx, y);
+          doc.setFont('helvetica', 'normal');
+          doc.setFontSize(8.5);
+          doc.setTextColor(71, 85, 105);
+          col.items.forEach(function (item, j) {
+            doc.text('• ' + item, cx, y + 6 + j * 5.5);
+          });
+        });
+        var maxItems = Math.max.apply(null, skillCols.map(function(c){ return c.items.length; }));
+        y += 6 + maxItems * 5.5 + 9;
+
+        // ── PROJECTS ─────────────────────────────────────────────
+        secTitle('Projects');
+        var projects = [
+          {
+            name: 'Coworking Space Platform',
+            stack: 'Java · JavaFX · SQL',
+            desc: 'Digital platform for managing and reserving spaces in coworking environments. Developed with a focus on user experience and intelligent UX/UI design.'
+          },
+          {
+            name: 'Project Management System',
+            stack: 'Java · JavaFX · SQL',
+            desc: 'Comprehensive project management tool for high-performance teams. Enables task assignment, role management, and remote progress visualization.'
+          },
+          {
+            name: 'RestUNA — Restaurant Management App',
+            stack: 'JavaFX · PostgreSQL',
+            desc: 'Restaurant administration application integrating point-of-sale, real-time order routing, and precise inventory and payroll control.'
+          }
+        ];
+        projects.forEach(function (p) {
+          doc.setFont('helvetica', 'bold');
+          doc.setFontSize(10);
+          doc.setTextColor(15, 23, 42);
+          doc.text(p.name, M, y);
+          doc.setFont('helvetica', 'bold');
+          doc.setFontSize(8);
+          doc.setTextColor(37, 99, 235);
+          doc.text(p.stack, W - M, y, { align: 'right' });
+          doc.setFont('helvetica', 'normal');
+          doc.setFontSize(9);
+          doc.setTextColor(71, 85, 105);
+          var descLines = doc.splitTextToSize(p.desc, CW);
+          doc.text(descLines, M, y + 5);
+          y += 5 + descLines.length * 4.8 + 3;
+          doc.setDrawColor(226, 232, 240);
+          doc.setLineWidth(0.3);
+          doc.line(M, y, W - M, y);
+          y += 5;
+        });
+
+        // ── EDUCATION + AVAILABILITY — 2 columns ─────────────────
+        y += 2;
+        var halfW = CW / 2 - 6;
+
+        // Education
+        doc.setFont('helvetica', 'bold');
+        doc.setFontSize(8);
+        doc.setTextColor(37, 99, 235);
+        doc.text('EDUCATION', M, y);
+        doc.setDrawColor(37, 99, 235);
+        doc.setLineWidth(0.5);
+        doc.line(M, y + 1.5, M + halfW, y + 1.5);
+        doc.setFont('helvetica', 'bold');
+        doc.setFontSize(9.5);
+        doc.setTextColor(15, 23, 42);
+        doc.text("Bachelor's in Information Systems Engineering", M, y + 7);
+        doc.setFont('helvetica', 'normal');
+        doc.setFontSize(9);
+        doc.setTextColor(71, 85, 105);
+        doc.text('UNA Sede Brunca · In progress (2026)', M, y + 13);
+
+        // Availability
+        var ax = M + halfW + 12;
+        doc.setFont('helvetica', 'bold');
+        doc.setFontSize(8);
+        doc.setTextColor(37, 99, 235);
+        doc.text('AVAILABILITY', ax, y);
+        doc.line(ax, y + 1.5, W - M, y + 1.5);
+        doc.setFont('helvetica', 'normal');
+        doc.setFontSize(9);
+        doc.setTextColor(71, 85, 105);
+        var availLines = doc.splitTextToSize(
+          'Open to freelance projects, remote collaborations, and technical consulting globally. Available to start immediately.',
+          halfW
+        );
+        doc.text(availLines, ax, y + 7);
+
+        // ── FOOTER ───────────────────────────────────────────────
+        doc.setFillColor(241, 245, 249);
+        doc.rect(0, H - 12, W, 12, 'F');
+        doc.setDrawColor(37, 99, 235);
+        doc.setLineWidth(0.8);
+        doc.line(0, H - 12, W, H - 12);
+        doc.setFont('helvetica', 'normal');
+        doc.setFontSize(7.5);
+        doc.setTextColor(100, 116, 139);
+        doc.text(
+          'edicsonpicadoq@gmail.com  ·  github.com/Edicson-PQ  ·  linkedin.com/in/ing-edicson-picado-quesada',
+          W / 2, H - 4.5, { align: 'center' }
+        );
+
+        doc.save('Edicson_Picado_CV.pdf');
+
+      } catch (err) {
+        console.error('PDF error:', err);
+        alert('No se pudo generar el PDF. Inténtalo de nuevo.');
+      } finally {
+        btn.innerHTML = 'Download CV <span aria-hidden="true">&#8681;</span>';
+        btn.style.pointerEvents = '';
+      }
+    });
+  </script>
+</body>
+
+</html>

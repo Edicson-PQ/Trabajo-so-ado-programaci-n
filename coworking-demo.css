@@ -1,0 +1,619 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  --bg-app: #070a13;
+  --bg-sidebar: #0b1120;
+  --bg-panel: #111827;
+  --bg-hover: #1f2937;
+  --bg-card: rgba(31, 41, 55, 0.6);
+  --bg-card-hover: rgba(31, 41, 55, 1);
+  --bg-table: rgba(31, 41, 55, 0.4);
+  --text-main: #f3f4f6;
+  --text-muted: #9ca3af;
+  --border-color: #374151;
+  
+  --primary: #3b82f6;
+  --primary-glow: rgba(59, 130, 246, 0.3);
+  
+  --status-free: #10b981;
+  --status-used: #ef4444;
+  --status-maint: #f59e0b;
+  
+  --radius-lg: 16px;
+  --font-title: 'Poppins', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Ocultar los radio buttons lógicos */
+.state-control {
+  display: none;
+}
+
+/* Contenedor principal Grid */
+.app-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  background: var(--bg-app);
+  color: var(--text-main);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* =====================================
+   DARK / LIGHT MODE (Puro CSS)
+===================================== */
+#theme-switch:checked ~ .app-container {
+  --bg-app: #e2e8f0;
+  --bg-sidebar: #f8fafc;
+  --bg-panel: #ffffff;
+  --bg-hover: #e2e8f0;
+  --bg-card: rgba(241, 245, 249, 1);
+  --bg-card-hover: #e2e8f0;
+  --bg-table: #f8fafc;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --border-color: #cbd5e1;
+}
+
+.theme-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  margin-bottom: 1.5rem;
+  padding: 0.5rem 0;
+}
+.theme-btn:hover { color: var(--text-main); }
+.theme-btn svg { width: 22px; height: 22px; }
+
+/* Icon Switch */
+.app-container .moon { display: none; }
+.app-container .sun { display: block; }
+#theme-switch:checked ~ .app-container .moon { display: block; }
+#theme-switch:checked ~ .app-container .sun { display: none; }
+
+/* =====================================
+   SIDEBAR
+===================================== */
+.sidebar {
+  width: 280px;
+  background: var(--bg-sidebar);
+  border-right: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.brand-icon {
+  width: 36px;
+  height: 36px;
+  background: var(--primary);
+  border-radius: 8px;
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.pulse-ring {
+  position: absolute;
+  inset: -6px;
+  border-radius: 12px;
+  border: 2px solid var(--primary);
+  animation: pulseBrand 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulseBrand {
+  0% { transform: scale(0.8); opacity: 1; }
+  100% { transform: scale(1.3); opacity: 0; }
+}
+
+.logo-svg {
+  width: 20px;
+  height: 20px;
+  stroke: #ffffff;
+  z-index: 2;
+  position: relative;
+}
+
+#theme-switch:checked ~ .app-container .logo-svg {
+  stroke: #ffffff;
+}
+
+.brand h2 {
+  font-family: var(--font-title);
+  margin: 0;
+  font-size: 1.25rem;
+  letter-spacing: 1px;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex-grow: 1;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 12px;
+  color: var(--text-muted);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.menu-item:hover {
+  background: var(--bg-hover);
+  color: var(--text-main);
+}
+
+.icon-wrapper {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-icon {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease;
+}
+
+/* Animaciones CSS de Iconos al Hover */
+.menu-item:hover .icon-grid rect {
+  animation: jiggleRect 0.6s ease infinite alternate;
+}
+.menu-item:hover .icon-users {
+  transform: translateY(-2px);
+}
+.menu-item:hover .user-plus {
+  animation: fadeInOut 1s ease infinite;
+}
+.menu-item:hover .icon-stats .bar-1 { animation: statGrow 1s ease infinite alternate; }
+.menu-item:hover .icon-stats .bar-2 { animation: statGrow 1.2s ease infinite alternate-reverse; }
+.menu-item:hover .icon-stats .bar-3 { animation: statGrow 0.8s ease infinite alternate; }
+
+@keyframes jiggleRect {
+  0% { transform: scale(1); }
+  100% { transform: scale(0.8); }
+}
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; stroke: var(--primary); }
+}
+@keyframes statGrow {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-4px); stroke: var(--primary); }
+}
+
+/* Indicador Activo Side Nav (Lógica CSS) */
+#nav-floor:checked ~ .app-container #btn-floor,
+#nav-users:checked ~ .app-container #btn-users,
+#nav-stats:checked ~ .app-container #btn-stats {
+  background: rgba(59, 130, 246, 0.1);
+  color: var(--primary);
+}
+#nav-floor:checked ~ .app-container #btn-floor::before,
+#nav-users:checked ~ .app-container #btn-users::before,
+#nav-stats:checked ~ .app-container #btn-stats::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 10%;
+  height: 80%;
+  width: 4px;
+  background: var(--primary);
+  border-radius: 0 4px 4px 0;
+  box-shadow: 0 0 10px var(--primary-glow);
+}
+
+.sidebar-bottom {
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-color);
+}
+.back-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+.back-link:hover { color: var(--text-main); }
+.back-link svg { width: 20px; height: 20px; }
+
+
+/* =====================================
+   CONTENT AREA
+===================================== */
+.content-area {
+  flex-grow: 1;
+  position: relative;
+  background: var(--bg-panel);
+  border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+  margin: 1.5rem 1.5rem 1.5rem 0;
+  box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+  overflow-y: auto;
+}
+
+/* Ocultar Paneles por Defecto */
+.panel {
+  display: none;
+  padding: 3rem;
+  animation: slideFadeIn 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+@keyframes slideFadeIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Lógica CSS para mostrar el panel correcto */
+#nav-floor:checked ~ .app-container #view-floor { display: block; }
+#nav-users:checked ~ .app-container #view-users { display: block; }
+#nav-stats:checked ~ .app-container #view-stats { display: block; }
+
+.panel-header {
+  margin-bottom: 3rem;
+}
+.panel-header h1 {
+  font-family: var(--font-title);
+  font-size: 2rem;
+  margin: 0 0 0.5rem 0;
+}
+.panel-header p {
+  color: var(--text-muted);
+  margin: 0;
+}
+
+
+/* =====================================
+   PLANO DE PISOS (GRID CSS)
+===================================== */
+.floor-selector {
+  margin-top: 2rem;
+  display: flex;
+  gap: 2rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 1rem;
+  position: relative;
+}
+
+.floor-btn {
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+/* Animación del indicador de pestaña del piso */
+.floor-slider {
+  position: absolute;
+  bottom: -1px;
+  height: 3px;
+  width: 100px;
+  background: var(--primary);
+  border-radius: 3px 3px 0 0;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 -2px 10px var(--primary-glow);
+}
+
+#level-1:checked ~ .floor-slider { left: 0; width: 145px; }
+#level-2:checked ~ .floor-slider { left: 175px; width: 155px; }
+
+#level-1:checked ~ [for="level-1"],
+#level-2:checked ~ [for="level-2"] {
+  color: var(--primary);
+}
+
+/* Ocultar mapas */
+.floor-map {
+  display: none;
+  margin-top: 3rem;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 150px;
+  gap: 1.5rem;
+  animation: fadeScale 0.6s ease forwards;
+}
+
+@keyframes fadeScale {
+  0% { opacity: 0; transform: scale(0.98); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+#level-1:checked ~ #map-level-1 { display: grid; }
+#level-2:checked ~ #map-level-2 { display: grid; }
+
+/* Habitaciones (Cuartos del Mapa) */
+.room {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: overlay;
+}
+
+/* Background image overrides for realism */
+#map-level-1 .r-large { background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=400&q=80'); }
+#map-level-1 .r-medium { background-image: url('https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=400&q=80'); }
+#map-level-1 .r-open { background-image: url('https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=800&q=80'); }
+#map-level-2 .r-large { background-image: url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=400&q=80'); }
+#map-level-2 .r-medium { background-image: url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=400&q=80'); }
+#map-level-2 .r-open { background-image: url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=800&q=80'); }
+
+.room:hover {
+  transform: translateY(-5px) scale(1.02);
+  background-color: var(--bg-card-hover);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+/* Indicadores de Estado por Colores (Luces LED) */
+.room::before {
+  content: '';
+  position: absolute;
+  top: 15px; right: 15px;
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px currentColor;
+}
+
+.room.available::before { color: var(--status-free); background: var(--status-free); animation: pulseDot 2s infinite; }
+.room.occupied::before { color: var(--status-used); background: var(--status-used); }
+.room.maintenance::before { color: var(--status-maint); background: var(--status-maint); animation: blink 1.5s infinite; }
+
+.room.available { border-top: 3px solid var(--status-free); }
+.room.occupied { border-top: 3px solid var(--status-used); opacity: 0.6; }
+.room.maintenance { border-top: 3px solid var(--status-maint); }
+
+.room:hover.available { box-shadow: 0 10px 30px rgba(16, 185, 129, 0.15); }
+
+/* Grid Layout para diferentes tamaños de sala */
+.r-large { grid-column: span 2; grid-row: span 2; }
+.r-medium { grid-column: span 2; grid-row: span 1; }
+.r-small { grid-column: span 1; grid-row: span 1; }
+.r-open { grid-column: span 4; grid-row: span 2; }
+
+.room-name {
+  display: block;
+  font-family: var(--font-title);
+  font-size: 1.25rem;
+  margin-bottom: 0.25rem;
+}
+.room-status {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Hover Action Text */
+.hover-action {
+  position: absolute;
+  bottom: -40px; left: 0; right: 0;
+  background: var(--primary);
+  color: #fff;
+  text-align: center;
+  padding: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  transition: bottom 0.3s ease;
+}
+.room.occupied .hover-action { background: var(--status-used); }
+.room.maintenance .hover-action { background: var(--status-maint); }
+
+.room:hover .hover-action {
+  bottom: 0;
+}
+
+
+/* =====================================
+   TABLA DE USUARIOS
+===================================== */
+.table-container {
+  width: 100%;
+  background: var(--bg-table);
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+}
+.table-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  padding: 1.25rem;
+  border-bottom: 1px solid var(--border-color);
+  align-items: center;
+}
+.table-row:last-child { border-bottom: none; }
+.table-row.th {
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  background: rgba(0,0,0,0.2);
+  border-radius: 12px 12px 0 0;
+}
+
+.table-row.outline-anim:hover {
+  background: rgba(59, 130, 246, 0.05);
+}
+
+.user-col {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-weight: 600;
+}
+.table-row {
+  transition: all 0.3s ease;
+  cursor: default;
+}
+.table-row:not(.th):hover {
+  background: var(--bg-hover);
+  transform: translateX(5px);
+}
+.avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  color: transparent; /* hide letters */
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+.avatar.blue { background-image: url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80'); }
+.avatar.green { background-image: url('https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&w=100&q=80'); }
+.avatar.purple { background-image: url('https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=100&q=80'); }
+.avatar.orange { background-image: url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=100&q=80'); }
+
+.table-row:hover .avatar { transform: scale(1.1) rotate(5deg); }
+
+.badge {
+  padding: 0.35rem 0.75rem;
+  border-radius: 99px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+.badge-green { background: rgba(16, 185, 129, 0.2); color: #34d399; }
+.badge-gray { background: rgba(156, 163, 175, 0.2); color: #9ca3af; }
+
+
+/* =====================================
+   ESTADÍSTICAS PURAMENTE EN CSS
+===================================== */
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 2rem;
+}
+.stat-card {
+  background: var(--bg-table);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.stat-card h3 {
+  margin: 0 0 2rem 0;
+  font-family: var(--font-title);
+  width: 100%;
+}
+
+/* Gráfico de Donut Animado (CSS Conic Gradient) */
+.donut-chart-wrapper {
+  position: relative;
+  width: 180px; height: 180px;
+}
+.donut-chart {
+  width: 100%; height: 100%;
+  border-radius: 50%;
+  background: conic-gradient(var(--primary) 0%, var(--primary) 0%, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.05) 100%);
+  animation: loadDonut 1.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards 0.3s;
+}
+
+@keyframes loadDonut {
+  0% { background: conic-gradient(var(--primary) 0%, rgba(255,255,255,0.05) 0%); }
+  100% { background: conic-gradient(var(--primary) 78%, rgba(255,255,255,0.05) 78%); }
+}
+
+.donut-inner {
+  position: absolute;
+  inset: 15px;
+  background: var(--bg-panel);
+  border-radius: 50%;
+  display: grid; place-items: center;
+}
+.donut-inner .percent {
+  font-size: 2.5rem;
+  font-weight: 700;
+  font-family: var(--font-title);
+  color: var(--primary);
+}
+
+/* Gráfico de Barras Animado */
+.bar-chart-wrapper {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 100%;
+  height: 200px;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 1rem;
+}
+.bar-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  height: 100%;
+  justify-content: flex-end;
+  flex: 1;
+}
+.bar-fill {
+  width: 40px;
+  background: linear-gradient(to top, rgba(59, 130, 246, 0.2), var(--primary));
+  border-radius: 6px 6px 0 0;
+  height: 0; 
+}
+.bar-col span {
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.css-anim-bar-1 { animation: growBar 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards 0.3s; --target-h: 60%; }
+.css-anim-bar-2 { animation: growBar 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards 0.4s; --target-h: 85%; }
+.css-anim-bar-3 { animation: growBar 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards 0.5s; --target-h: 100%; }
+.css-anim-bar-4 { animation: growBar 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards 0.6s; --target-h: 40%; }
+.css-anim-bar-5 { animation: growBar 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards 0.7s; --target-h: 70%; }
+
+@keyframes growBar {
+  to { height: var(--target-h); }
+}
+
+/* Utilidades Keyframes */
+@keyframes pulseDot { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.5); opacity: 0.5; box-shadow: 0 0 20px currentColor;} }
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }

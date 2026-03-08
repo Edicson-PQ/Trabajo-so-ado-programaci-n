@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-width=1.0">
+  <title>Demostración: Coworking Space Platform</title>
+  <link rel="stylesheet" href="coworking-demo.css">
+</head>
+<body>
+
+  <!-- ==========================================
+       CONTROLADORES DE ESTADO (PURO CSS)
+       Se usan radio buttons ocultos para navegar
+  =========================================== -->
+  <input type="radio" name="main-nav" id="nav-floor" checked class="state-control">
+  <input type="radio" name="main-nav" id="nav-users" class="state-control">
+  <input type="radio" name="main-nav" id="nav-stats" class="state-control">
+  
+  <!-- Switch de Modo Claro / Oscuro -->
+  <input type="checkbox" id="theme-switch" class="state-control">
+
+  <div class="app-container">
+    
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-icon">
+          <svg class="logo-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect>
+            <path d="M9 22v-4h6v4"></path>
+            <path d="M8 6h.01"></path>
+            <path d="M16 6h.01"></path>
+            <path d="M12 6h.01"></path>
+            <path d="M12 10h.01"></path>
+            <path d="M12 14h.01"></path>
+            <path d="M16 10h.01"></path>
+            <path d="M16 14h.01"></path>
+            <path d="M8 10h.01"></path>
+            <path d="M8 14h.01"></path>
+          </svg>
+          <div class="pulse-ring"></div>
+        </div>
+        <h2>SpaceLink</h2>
+      </div>
+
+      <nav class="menu">
+        <label for="nav-floor" class="menu-item" id="btn-floor">
+          <div class="icon-wrapper">
+            <!-- Icono Animado CSS: Cuadrícula expandiéndose -->
+            <svg class="menu-icon icon-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="7" height="7"></rect>
+              <rect x="14" y="3" width="7" height="7"></rect>
+              <rect x="14" y="14" width="7" height="7"></rect>
+              <rect x="3" y="14" width="7" height="7"></rect>
+            </svg>
+          </div>
+          <span>Plano de Pisos</span>
+        </label>
+
+        <label for="nav-users" class="menu-item" id="btn-users">
+          <div class="icon-wrapper">
+            <!-- Icono Animado CSS: Usuarios saltando -->
+            <svg class="menu-icon icon-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path class="user-plus" d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path class="user-plus" d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+          </div>
+          <span>Usuarios</span>
+        </label>
+
+        <label for="nav-stats" class="menu-item" id="btn-stats">
+          <div class="icon-wrapper">
+            <!-- Icono Animado CSS: Barras creciendo -->
+            <svg class="menu-icon icon-stats" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line class="bar-1" x1="18" y1="20" x2="18" y2="10"></line>
+              <line class="bar-2" x1="12" y1="20" x2="12" y2="4"></line>
+              <line class="bar-3" x1="6" y1="20" x2="6" y2="14"></line>
+            </svg>
+          </div>
+          <span>Estadísticas</span>
+        </label>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <label for="theme-switch" class="theme-btn">
+          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+          <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          <span>Cambiar Modo</span>
+        </label>
+
+        <a href="index.html#projects" class="back-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+          Volver al Portafolio
+        </a>
+      </div>
+    </aside>
+
+    <!-- CONTENT AREA -->
+    <main class="content-area">
+
+      <!-- ==========================================
+           VISTA 1: PLANO DE PISOS (FLOOR PLAN)
+      =========================================== -->
+      <section class="panel" id="view-floor">
+        <header class="panel-header">
+          <div>
+            <h1>Plano Gráfico e Interactivo</h1>
+            <p>Selecciona una sala para ver su estado o reservarla.</p>
+          </div>
+          
+          <!-- Selector de pisos usando Tabs puros de CSS -->
+          <div class="floor-selector">
+            <input type="radio" name="floor-level" id="level-1" checked class="state-control">
+            <input type="radio" name="floor-level" id="level-2" class="state-control">
+            
+            <label for="level-1" class="floor-btn">Piso 1 (Principal)</label>
+            <label for="level-2" class="floor-btn">Piso 2 (Ejecutivo)</label>
+            <div class="floor-slider"></div>
+
+            <!-- Capa del Piso 1 -->
+            <div class="floor-map" id="map-level-1">
+              <div class="room r-large available">
+                <div class="room-content">
+                  <span class="room-name">Sala de Conferencias A</span>
+                  <span class="room-status">Disponible</span>
+                </div>
+                <div class="hover-action">RESERVAR AHORA</div>
+              </div>
+              <div class="room r-medium occupied">
+                <div class="room-content">
+                  <span class="room-name">Sala de Reuniones B</span>
+                  <span class="room-status">Ocupada</span>
+                </div>
+                <div class="hover-action">EN USO. FIN: 14:00</div>
+              </div>
+              <div class="room r-small available">
+                <div class="room-content">
+                  <span class="room-name">Oficina Privada 1</span>
+                  <span class="room-status">Disponible</span>
+                </div>
+                <div class="hover-action">RESERVAR AHORA</div>
+              </div>
+              <div class="room r-small maintenance">
+                <div class="room-content">
+                  <span class="room-name">Oficina Privada 2</span>
+                  <span class="room-status">Mantenimiento</span>
+                </div>
+                <div class="hover-action">NO DISPONIBLE</div>
+              </div>
+              <div class="room r-open available">
+                <div class="room-content">
+                  <span class="room-name">Zona Open Space (Hot Desks)</span>
+                  <span class="room-capacity">24 / 40 Asientos Libres</span>
+                  <div class="desk-grid">
+                    <span></span><span></span><span></span><span></span><span></span><span></span>
+                  </div>
+                </div>
+                <div class="hover-action">SELECCIONAR ASIENTO</div>
+              </div>
+            </div>
+
+            <!-- Capa del Piso 2 -->
+            <div class="floor-map" id="map-level-2">
+              <div class="room r-large occupied">
+                <div class="room-content">
+                  <span class="room-name">Sala Ejecutiva (Directorio)</span>
+                  <span class="room-status">Ocupada</span>
+                </div>
+                <div class="hover-action">RESERVADA TODO EL DÍA</div>
+              </div>
+              <div class="room r-medium available">
+                <div class="room-content">
+                  <span class="room-name">Sala de Videollamadas C</span>
+                  <span class="room-status">Disponible</span>
+                </div>
+                <div class="hover-action">RESERVAR AHORA</div>
+              </div>
+              <div class="room r-open available">
+                <div class="room-content">
+                  <span class="room-name">Cafetería y Relax</span>
+                  <span class="room-status">Aforo: Bajo</span>
+                </div>
+                <div class="hover-action">VER DETALLES</div>
+              </div>
+            </div>
+          </div>
+        </header>
+      </section>
+
+      <!-- ==========================================
+           VISTA 2: GESTIÓN DE USUARIOS
+      =========================================== -->
+      <section class="panel" id="view-users">
+        <header class="panel-header">
+          <div>
+            <h1>Gestión de Usuarios Activos</h1>
+            <p>Monitoreo en tiempo real de los miembros en el edificio.</p>
+          </div>
+        </header>
+        <div class="table-container">
+          <div class="table-row th">
+            <div class="col">Miembro</div>
+            <div class="col">Membresía</div>
+            <div class="col">Estado Actual</div>
+            <div class="col">Ubicación</div>
+          </div>
+          <div class="table-row outline-anim">
+            <div class="col user-col"><div class="avatar blue">AL</div> Alice Lambert</div>
+            <div class="col">Premium Anual</div>
+            <div class="col"><span class="badge badge-green">Conectado</span></div>
+            <div class="col">Zona Open Space - Piso 1</div>
+          </div>
+          <div class="table-row outline-anim">
+            <div class="col user-col"><div class="avatar green">BS</div> Bob Smith</div>
+            <div class="col">Pase Diario</div>
+            <div class="col"><span class="badge badge-gray">Inactivo</span></div>
+            <div class="col">--</div>
+          </div>
+          <div class="table-row outline-anim">
+            <div class="col user-col"><div class="avatar purple">CD</div> Charlie Davis</div>
+            <div class="col">Corporativo (Equipo)</div>
+            <div class="col"><span class="badge badge-green">Conectado</span></div>
+            <div class="col">Sala de Reuniones B</div>
+          </div>
+          <div class="table-row outline-anim">
+            <div class="col user-col"><div class="avatar orange">DM</div> Diana Miller</div>
+            <div class="col">Oficina Privada</div>
+            <div class="col"><span class="badge badge-green">Conectado</span></div>
+            <div class="col">Oficina Privada 1</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           VISTA 3: ESTADÍSTICAS
+      =========================================== -->
+      <section class="panel" id="view-stats">
+        <header class="panel-header">
+          <div>
+            <h1>Analíticas del Coworking</h1>
+            <p>Métricas de uso y capacidad operadas visualmente por CSS.</p>
+          </div>
+        </header>
+
+        <div class="stats-grid">
+           <!-- Gráfico de Donut -->
+           <div class="stat-card">
+             <h3>Ocupación Actual</h3>
+             <div class="donut-chart-wrapper">
+               <div class="donut-chart css-anim-donut"></div>
+               <div class="donut-inner">
+                 <span class="percent">78%</span>
+               </div>
+             </div>
+             <p class="stat-desc">Capacidad máxima al límite prudente.</p>
+           </div>
+
+           <!-- Gráfico de Barras -->
+           <div class="stat-card">
+             <h3>Afluencia Semanal (Visitas)</h3>
+             <div class="bar-chart-wrapper">
+               <div class="bar-col"><div class="bar-fill css-anim-bar-1"></div><span>L</span></div>
+               <div class="bar-col"><div class="bar-fill css-anim-bar-2"></div><span>K</span></div>
+               <div class="bar-col"><div class="bar-fill css-anim-bar-3"></div><span>M</span></div>
+               <div class="bar-col"><div class="bar-fill css-anim-bar-4"></div><span>J</span></div>
+               <div class="bar-col"><div class="bar-fill css-anim-bar-5"></div><span>V</span></div>
+             </div>
+           </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+</body>
+</html>

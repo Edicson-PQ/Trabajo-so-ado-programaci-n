@@ -1,4 +1,4 @@
-:root {
+﻿:root {
   --font-main: 'Plus Jakarta Sans', sans-serif;
   
   --bg-app: #f4f7fe;
@@ -264,3 +264,155 @@ body { margin: 0; font-family: var(--font-main); background: var(--bg-app); colo
 }
 .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--primary); }
 .form-group textarea { resize: vertical; min-height: 80px;}
+
+
+/* =====================================================
+   RESPONSIVE — MOBILE FIRST (max-width: 768px)
+====================================================== */
+@media (max-width: 768px) {
+
+  /* Allow scrolling */
+  body { overflow: auto; height: auto; }
+
+  /* Stack layout vertically */
+  .app-layout {
+    flex-direction: column;
+    height: auto;
+    min-height: 100dvh;
+  }
+
+  /* ── Sidebar becomes a fixed bottom nav bar ── */
+  .sidebar {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0;
+    border-right: none;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    z-index: 200;
+  }
+
+  .sidebar-header { display: none; }
+  .sidebar-footer { display: none; }
+
+  .nav-menu {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-grow: 1;
+    gap: 0;
+    height: 100%;
+  }
+
+  .nav-item {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    padding: 6px 8px;
+    font-size: 0.62rem;
+    border-radius: 0;
+    flex: 1;
+    height: 100%;
+  }
+
+  .nav-item svg { width: 18px; height: 18px; }
+
+  /* ── Main content ── */
+  .main-content {
+    overflow-y: auto;
+    overflow-x: hidden;
+    flex-grow: 1;
+    margin-bottom: 60px;
+    width: 100%;
+  }
+
+  /* ── Topbar ── */
+  .topbar {
+    padding: 0.85rem 1rem;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .topbar-left h1 { font-size: 1.25rem; }
+  .topbar-right { gap: 0.5rem; }
+
+  .search-box input {
+    width: 140px;
+    font-size: 0.8rem;
+  }
+
+  /* ── Views container: static, small padding ── */
+  .views-container {
+    position: static;
+    padding: 0 1rem 1.5rem;
+  }
+
+  /* ── View sections: static positioning ── */
+  .view-section {
+    position: static !important;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    display: none;
+  }
+
+  /* Show correct section via radio button state (matches existing HTML structure) */
+  #nav-dash:checked ~ .app-layout #view-dashboard,
+  #nav-users:checked ~ .app-layout #view-users,
+  #nav-projects:checked ~ .app-layout #view-projects,
+  #nav-kanban:checked ~ .app-layout #view-kanban { display: block; }
+
+  /* ── Dashboard grid: 1 column on mobile ── */
+  .grid-cards {
+    grid-template-columns: 1fr;
+  }
+
+  /* ── Toolbar ── */
+  .toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .toolbar-right { width: 100%; justify-content: space-between; }
+
+  /* ── Kanban board: vertical stacking ── */
+  .kanban-board {
+    flex-direction: column;
+    height: auto;
+    padding-bottom: 1rem;
+  }
+
+  .kanban-column {
+    width: 100% !important;
+    min-width: unset;
+  }
+
+  /* ── Projects grid: 1 column ── */
+  .projects-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* ── Modal: full-width ── */
+  .modal-box {
+    width: 95%;
+    max-width: none;
+    margin: 1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .nav-item span { display: none; }
+  .nav-item { gap: 0; }
+  .search-box input { width: 100px; }
+}

@@ -617,3 +617,137 @@ body {
 /* Utilidades Keyframes */
 @keyframes pulseDot { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.5); opacity: 0.5; box-shadow: 0 0 20px currentColor;} }
 @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+
+/* =====================================================
+   RESPONSIVE — MOBILE FIRST (max-width: 768px)
+====================================================== */
+@media (max-width: 768px) {
+
+  /* Allow scrolling on mobile */
+  body { overflow: auto; height: auto; }
+
+  /* Stack layout vertically */
+  .app-container {
+    flex-direction: column;
+    height: auto;
+    min-height: 100dvh;
+  }
+
+  /* ── Sidebar becomes a fixed bottom nav bar ── */
+  .sidebar {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0;
+    border-right: none;
+    border-top: 1px solid var(--border-color);
+    z-index: 200;
+    height: 60px;
+  }
+
+  .brand { display: none; }
+  .sidebar-bottom { display: none; }
+
+  .menu {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-grow: 1;
+    gap: 0;
+    height: 100%;
+  }
+
+  .menu-item {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    padding: 6px 8px;
+    font-size: 0.62rem;
+    border-radius: 0;
+    flex: 1;
+    height: 100%;
+    overflow: visible;
+  }
+
+  .icon-wrapper { width: 20px; height: 20px; }
+
+  /* Active indicator: top border instead of left border */
+  #nav-floor:checked ~ .app-container #btn-floor::before,
+  #nav-users:checked ~ .app-container #btn-users::before,
+  #nav-stats:checked ~ .app-container #btn-stats::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 10%;
+    width: 80%; height: 3px;
+    background: var(--primary);
+    border-radius: 0 0 3px 3px;
+    box-shadow: 0 0 10px var(--primary-glow);
+  }
+
+  /* ── Content area ── */
+  .content-area {
+    width: 100%;
+    border-radius: 0;
+    margin: 0 0 60px 0; /* leave room for bottom nav */
+    box-shadow: none;
+    overflow-y: auto;
+    flex-grow: 1;
+  }
+
+  .panel { padding: 1.25rem; }
+
+  .panel-header { margin-bottom: 1.5rem; }
+  .panel-header h1 { font-size: 1.4rem; }
+
+  /* ── Floor plan: 2-column grid on mobile ── */
+  .floor-map {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 130px;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+  }
+
+  /* Collapse large/open spans on small screens */
+  .r-large  { grid-column: span 2; grid-row: span 1; }
+  .r-medium { grid-column: span 2; grid-row: span 1; }
+  .r-small  { grid-column: span 1; grid-row: span 1; }
+  .r-open   { grid-column: span 2; grid-row: span 1; }
+
+  /* ── Users table: hide less important columns ── */
+  .table-row {
+    grid-template-columns: 2fr 1fr;
+    gap: 0.5rem;
+  }
+
+  /* Hide 3rd and 4th columns on small screens */
+  .table-row > *:nth-child(3),
+  .table-row > *:nth-child(4) { display: none; }
+
+  /* ── Stats ── */
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* ── Floor selector ── */
+  .floor-selector { gap: 1rem; }
+  #level-1:checked ~ .floor-slider { left: 0; width: 90px; }
+  #level-2:checked ~ .floor-slider { left: 110px; width: 95px; }
+}
+
+@media (max-width: 400px) {
+  .floor-map {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 120px;
+  }
+  .r-large, .r-medium, .r-small, .r-open {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+}
